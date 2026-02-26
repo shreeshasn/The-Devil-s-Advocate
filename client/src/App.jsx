@@ -113,7 +113,7 @@ function App() {
   const textareaRef = useRef(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/status')
+    fetch('https://the-devil-s-advocate.onrender.com/api/status')
       .then(res => res.json())
       .then(data => {
         setServerHasDefaultKey(data.hasDefaultKey)
@@ -210,7 +210,7 @@ function App() {
     
     try {
       setStep('proposer-thinking')
-      const res1 = await fetch('http://localhost:5000/api/proposer', {
+      const res1 = await fetch('https://the-devil-s-advocate.onrender.com/api/proposer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloadBase)
@@ -220,7 +220,7 @@ function App() {
       setProposal(data1.proposal)
 
       setStep('critic-thinking')
-      const res2 = await fetch('http://localhost:5000/api/critic', {
+      const res2 = await fetch('https://the-devil-s-advocate.onrender.com/api/critic', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...payloadBase, proposal: data1.proposal })
@@ -230,7 +230,7 @@ function App() {
       setCritique(data2.critique)
 
       setStep('judge-thinking')
-      const res3 = await fetch('http://localhost:5000/api/judge', {
+      const res3 = await fetch('https://the-devil-s-advocate.onrender.com/api/judge', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...payloadBase, proposal: data1.proposal, critique: data2.critique })
