@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Lightbulb, ShieldAlert, Scale, Swords, Sun, Moon, Menu, X, MessageSquare, Plus, SlidersHorizontal, Volume2, Play, Pause, Square, Settings } from 'lucide-react'
+import { Lightbulb, ShieldAlert, Scale, Swords, Sun, Moon, Menu, X, MessageSquare, Plus, SlidersHorizontal, Volume2, Play, Pause, Square, Settings, Github } from 'lucide-react'
 import './App.css'
 
 const TTSPlayer = ({ text, agentType, colorClass }) => {
@@ -257,7 +257,6 @@ function App() {
     }
   }
 
-  // The missing function that caused the crash
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
@@ -482,6 +481,15 @@ function App() {
           </div>
         )}
       </div>
+
+      <footer className="app-footer">
+        <p className="footer-quote">"Truth emerges from the clash of opposing ideas."</p>
+        <a href="https://github.com/shreeshasn/The-Devil-s-Advocate" target="_blank" rel="noopener noreferrer" className="github-link">
+          <Github size={16} />
+          <span>View on GitHub</span>
+        </a>
+      </footer>
+
     </div>
   )
 }
